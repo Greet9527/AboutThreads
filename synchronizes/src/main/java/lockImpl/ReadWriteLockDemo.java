@@ -6,6 +6,13 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/*
+* 描述：
+* 读写锁实现缓存
+*
+* ReentrantReaWriteLock 只支持锁降级，不支持锁升级 并且只有写锁可以创建条件变量
+* 读写锁允许多个线程同时读共享变量，当一个线程在写共享变量时，不允许其他线程执行读写操作
+* */
 public class ReadWriteLockDemo<K,V> {
     private final Map<K,V> m=new HashMap<>();
 
